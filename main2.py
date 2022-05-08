@@ -25,7 +25,7 @@ num=current_time.day%10
 
 
 
-df=pd.read_excel(r'C:\Users\19209\Wordy/Test.xlsx')
+df=pd.read_excel(r'Test.xlsx')
 Question=df.Question.tolist()
 Answer=df.Answer.tolist()
 #num=random.randrange(1, 9)  
