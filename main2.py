@@ -23,13 +23,16 @@ def update_first():
     
 current_time = datetime.datetime.now()
 num=current_time.day%10
+if num==0:
+    num=10
+
 
 
 
 df=pd.read_excel(r'Test.xlsx')
 Question=df.Question.tolist()
 Answer=df.Answer.tolist()
-#num=random.randrange(1, 9)  
+
 
 st.markdown("***")
 
@@ -52,12 +55,12 @@ st.write(Question[num])
 st.sidebar.image("Brainy.jpg")
 #st.sidebar.markdown("<img src="Brainy.jpg" alt="Paris" class="center">",unsafe_allow_html=True)
 
-st.sidebar.markdown("<h5 style='text-align: center; color: White;'>Are you good at solving Trivia and Word puzzles?</h5>", unsafe_allow_html=True)
+st.sidebar.markdown("<h5 style='text-align: center; color: Black;'>Are you good at Trivia and Word puzzles🙂?</h5>", unsafe_allow_html=True)
 
-st.sidebar.markdown("<h5 style='text-align: center; color: White;'>Guess the 5 letter answer and hit Submit</h5>", unsafe_allow_html=True)
+st.sidebar.markdown("<h5 style='text-align: center; color: Black'>Guess the 5 letter answer and hit Submit</h5>", unsafe_allow_html=True)
 
-st.sidebar.markdown("<h5 style='text-align: center; color: White;'>Incorrect letters disappear</h5>", unsafe_allow_html=True)
-#st.sidebar.markdown("<h5 style='text-align: center; color: White;'>You have unlimited tries</h5>", unsafe_allow_html=True)
+st.sidebar.markdown("<h5 style='text-align: center; color: Black;'>Incorrect letters disappear and you have unlimited tries!</h5>", unsafe_allow_html=True)
+
 
 
 
@@ -79,7 +82,7 @@ with col4:
 with col5:
     st.text_input("",max_chars=1, key='fifth')
 
-st.button(label="Submit", key=None, help=None, on_click=update_first)
+st.button(label="Submit 👈", key=None, help=None, on_click=update_first)
    
 if st.session_state.first.upper()==Word[0].upper():
         Score=Score+1
